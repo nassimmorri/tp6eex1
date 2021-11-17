@@ -2,42 +2,25 @@
 #include <stdlib.h>
 
 int main()
-{int i,j,k,n=100 ;
-    float m,max,min,t[n],s=0;
-
+{ int n , i,t[50],aux;
 do{
-    printf("donne n entier \n");
+    printf("donne un entier ");
     scanf("%d",&n);
-}while(n<1 || n>100);
-
-
+}while( n>50);
 for(i=0;i<n;i++){
-    printf("donne t[%d]",i);
-scanf("%f",&t[i]);
-
+    printf("t[%d]=",i);
+    scanf("%d",&t[i]);
 }
-for(i=0;i<n;i++){
-s=s+t[i];
+aux=t[0];
+for(i=0;i<n-1;i++){
+         t[i]=t[i+1];
 }
-m=s/n;
-min=t[0];
-max=t[0];
-
+t[n-1]=aux;
+ printf("tableaux apres decalge \n");
 for(i=0;i<n;i++){
 
-if(t[i]>max)
-    max=t[i];
-
+ printf("%d",t[i]);
 }
-for(i=0;i<n;i++){
 
-if(t[i]<min)
-    min=t[i];
-
-}
-printf("maximum est %3.f \n",max);
-printf("minmum est %3.f \n",min);
-printf("la somme est %3.f  \n",s);
-printf("la moyenne est %3.f  \n",m);
     return 0;
 }
